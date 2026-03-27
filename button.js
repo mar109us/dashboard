@@ -32,8 +32,25 @@ class Button {
         let w = this.w
         let h = this.h
 
+        let array_position = button_array.indexOf(this)
+
+        
+
+        if (array_position == 0) {
+            this.canvas.style.left = `${g.grid_x}px`
+        }
+        else if (array_position == 1) {
+            this.canvas.style.left = `${g.grid_x * 2}px`
+        }
+        if (array_position >= 2) {
+            this.canvas.style.left = `${g.grid_x * this.array_position}px`
+        }
+
+
+
+
         button.fillStyle = "black"
-        button.fillRect(0, 0, w, h)
+        button.fillRect(x, 0, w, h)
 
         if (typeof this.onRenderContent === 'function') {
             this.onRenderContent (
@@ -46,3 +63,6 @@ class Button {
         }    
     }
 }
+
+
+            
