@@ -32,19 +32,17 @@ class Button {
         let w = this.w
         let h = this.h
 
-        let array_position = button_array.indexOf(this)
+        let array_position = button_array.indexOf(this) + 1
+
+        this.canvas.style.left = `${g.grid_x * array_position}px`
+
+
+        if (array_position > max_elements_x && array_position <= max_elements_x * 2) {
+            this.canvas.style.top = `${100}px`
+            this.canvas.style.left = `${g.grid_x * (array_position - max_elements_x)}px`
+        }
 
         
-
-        if (array_position == 0) {
-            this.canvas.style.left = `${g.grid_x}px`
-        }
-        else if (array_position == 1) {
-            this.canvas.style.left = `${g.grid_x * 2}px`
-        }
-        if (array_position >= 2) {
-            this.canvas.style.left = `${g.grid_x * this.array_position}px`
-        }
 
 
 
