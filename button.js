@@ -1,3 +1,5 @@
+let button_array = []
+
 class Button {
     constructor(x, y, w, h) {
         this.x = x
@@ -6,7 +8,7 @@ class Button {
         this.h = h
 
         this.canvas = document.createElement('canvas')
-        this.button = this.canvas.getContext('2d')
+        this.button_canvas = this.canvas.getContext('2d')
 
         this.canvas.style.position = "absolute"
 
@@ -16,25 +18,31 @@ class Button {
         this.canvas.height = this.h
 
         this.canvas.style.zIndex = "10"
+
+        document.body.appendChild(this.canvas)
+
+        button_array.push(this)
     }
 
-    button_loop() {
-        let button = this.button
+    render_button() {
+        let button = this.button_canvas
 
         let x = this.x
         let y = this.y
         let w = this.w
         let h = this.h
 
-        
-        
+        button.fillStyle = "black"
+        button.fillRect(0, 0, w, h)
+
+        if (typeof this.onRenderContent === 'function') {
+            this.onRenderContent (
+                button,
+                x,
+                y,
+                w,
+                h
+            )
+        }    
     }
-
-
-
-
-
-
-
-
 }

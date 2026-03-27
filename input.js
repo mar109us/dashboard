@@ -1,7 +1,7 @@
-onmouseover
+/* onmouseover
 
 onmousedown
 
 onmouseup
 
-onmousemove
+onmousemove */

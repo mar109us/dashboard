@@ -1,3 +1,7 @@
 function main_loop() {
-    console.log("main loop")
+
+    button_array.forEach(Button => {
+        Button.render_button()
+    })
+    
 }
