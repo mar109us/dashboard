@@ -42,7 +42,17 @@ class Button {
             this.canvas.style.left = `${g.grid_x * (array_position - max_elements_x)}px`
         }
 
-        
+        if (array_position > max_elements_x * 2 && array_position <= max_elements_x * 3) {
+            this.canvas.style.top = `${200}px`
+            this.canvas.style.left = `${g.grid_x * (array_position - max_elements_x * 2)}px`
+        }
+
+        if (array_position > max_elements_x * 3 && array_position <= max_elements_x * 4) {
+            this.canvas.style.top = `${300}px`
+            this.canvas.style.left = `${g.grid_x * (array_position - max_elements_x * 3)}px`
+        }
+
+
 
 
 
