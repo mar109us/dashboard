@@ -16,14 +16,12 @@ window.g = {
 
 const global_fps = g.fps_2
 
-
-
 function update_window_size() {
     g.max_width = window.innerWidth
     g.max_height = window.innerHeight
 }
 
-function check_value() {
+function check_global_value() {
     console.log(
         g.min_width,
         g.max_width,
