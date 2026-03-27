@@ -1,0 +1,7 @@
+onmouseover
+
+onmousedown
+
+onmouseup
+
+onmousemove
