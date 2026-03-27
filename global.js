@@ -14,9 +14,9 @@ window.g = {
 
 };
 
-setInterval(update_window_size, g.fps_2)
+const global_fps = g.fps_2
 
-setInterval(check_value, g.fps_2)
+
 
 function update_window_size() {
     g.max_width = window.innerWidth

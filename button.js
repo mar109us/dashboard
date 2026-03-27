@@ -20,8 +20,14 @@ class Button {
 
     button_loop() {
         let button = this.button
+
         let x = this.x
-        let 
+        let y = this.y
+        let w = this.w
+        let h = this.h
+
+        
+        
     }
 
 
