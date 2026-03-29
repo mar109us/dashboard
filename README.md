@@ -15,3 +15,4 @@ Testing and trying to flesh out a project file setup style, for better organizat
 
 Going more in depth with console.log() to get better response and overview on live events.
 This by gradually creating debug or info tools parallel with making the project.
+
