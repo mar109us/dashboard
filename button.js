@@ -119,6 +119,20 @@ class Button {
         button.fill()
 
 
+        // text highlight
+        button.fillStyle = "rgb(255, 250, 250)"
+        button.font = "60px helvetica"
+        button.fillText("hello", 49, 69)
+
+        // text shadow
+        button.fillStyle = "rgb(200, 200, 210)"
+        button.font = "60px helvetica"
+        button.fillText("hello", 51, 71)
+
+        // text 
+        button.fillStyle = "rgb(233, 233, 233)"
+        button.font = "60px helvetica"
+        button.fillText("hello", 50, 70)
 
 
         if (typeof this.onRenderContent === 'function') {
