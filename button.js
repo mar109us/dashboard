@@ -10,12 +10,12 @@ class Button {
         this.canvas = document.createElement('canvas')
         this.button_canvas = this.canvas.getContext('2d')
 
-        this.canvas.style.position = "absolute"
+        /* this.canvas.style.position = "absolute" */
 
         this.canvas.style.left = `${this.x}px`
         this.canvas.style.top = `${this.y}px`
-        this.canvas.width = this.w
-        this.canvas.height = this.h
+/*      this.canvas.width = this.w
+        this.canvas.height = this.h */
 
         this.canvas.style.zIndex = "10"
 
@@ -29,36 +29,59 @@ class Button {
 
         let x = this.x
         let y = this.y
-        let w = this.w
-        let h = this.h
+/*         let w = this.w
+        let h = this.h */
 
         let array_position = button_array.indexOf(this) + 1
 
-        this.canvas.style.left = `${g.grid_x * array_position}px`
+        /* this.canvas.style.left = `${g.grid_x * array_position}px` */
 
 
         if (array_position > max_elements_x && array_position <= max_elements_x * 2) {
-            this.canvas.style.top = `${100}px`
             this.canvas.style.left = `${g.grid_x * (array_position - max_elements_x)}px`
         }
 
         if (array_position > max_elements_x * 2 && array_position <= max_elements_x * 3) {
-            this.canvas.style.top = `${200}px`
             this.canvas.style.left = `${g.grid_x * (array_position - max_elements_x * 2)}px`
         }
 
         if (array_position > max_elements_x * 3 && array_position <= max_elements_x * 4) {
-            this.canvas.style.top = `${300}px`
             this.canvas.style.left = `${g.grid_x * (array_position - max_elements_x * 3)}px`
         }
 
+/*         //  shadow
+        button.fillStyle = "rgb(232, 222, 212)"
+        button.beginPath()
+        button.roundRect(15, 15, 200, 80, 30)
+        button.fill()
+
+        //  highlight
+        button.fillStyle = "rgb(250, 244, 234)"
+        button.beginPath()
+        button.roundRect(5, 5, 200, 80, 30)
+        button.fill() */
+
+        //  shadow
+        button.fillStyle = "rgb(232, 222, 212)"
+        button.beginPath()
+        button.roundRect(15, 15, 200, 80, 30)
+        button.fill()
+
+
+        //  highlight
+        button.fillStyle = "rgb(250, 244, 234)"
+        button.beginPath()
+        button.roundRect(5, 5, 200, 80, 30)
+        button.fill()
+
+        //  center
+        button.fillStyle = "rgb(250, 240, 230)"
+        button.beginPath()
+        button.roundRect(10, 10, 200, 80, 30)
+        button.fill()
 
 
 
-
-
-        button.fillStyle = "black"
-        button.fillRect(x, 0, w, h)
 
         if (typeof this.onRenderContent === 'function') {
             this.onRenderContent (

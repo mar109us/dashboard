@@ -1,4 +1,5 @@
-const max_elements_x = 5
+const max_elements_x = 3
+const margin_left = 50
 
 window.g = {
 
@@ -42,7 +43,6 @@ function check_global_value() {
         "max_width:", g.max_width,
         "max_height:", g.max_height,
         "button count:", button_array.length,
-        "array pos:", button_array[Button],
         "g.grid_x:", g.grid_x,
 
     )
