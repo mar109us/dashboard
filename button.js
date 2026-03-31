@@ -62,25 +62,37 @@ class Button {
         button.fill() */
 
         //  shadow
-        button.fillStyle = "rgb(232, 222, 212)"
+        button.fillStyle = "rgb(232, 233, 233)"
         button.beginPath()
-        button.roundRect(15, 15, 200, 80, 30)
+        button.roundRect(25, 23, 200, 80, 30)
         button.fill()
 
 
         //  highlight
-        button.fillStyle = "rgb(250, 244, 234)"
+        button.fillStyle = "rgb(238, 239, 239)"
         button.beginPath()
-        button.roundRect(5, 5, 200, 80, 30)
+        button.roundRect(0, 3, 200, 80, 30)
+        button.fill()
+
+        //  shadow inner
+        button.fillStyle = "rgb(231, 232, 232)"
+        button.beginPath()
+        button.roundRect(10, 10, 198, 78, 30)
+        button.fill()
+
+        //  highlight inner
+        button.fillStyle = "rgb(239, 240, 240)"
+        button.beginPath()
+        button.roundRect(14, 14, 198, 78, 30)
         button.fill()
 
         //  center
-        button.fillStyle = "rgb(250, 240, 230)"
+        button.fillStyle = "rgb(235, 236, 236)"
         button.beginPath()
-        button.roundRect(10, 10, 200, 80, 30)
+        button.roundRect(12, 12, 198, 78, 30)
         button.fill()
 
-
+        
 
 
         if (typeof this.onRenderContent === 'function') {
