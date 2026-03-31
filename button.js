@@ -48,19 +48,19 @@ class Button {
         //  shadow light
         button.fillStyle = "rgb(233, 234, 234)"
         button.beginPath()
-        button.roundRect(30, 30, w, 80, 30)
+        button.roundRect(22, 22, w, 80, 30)
         button.fill()
 
         //  shadow mid
-        button.fillStyle = "rgb(231, 232, 232)"
+        button.fillStyle = "rgb(229, 230, 230)"
         button.beginPath()
-        button.roundRect(25, 25, w, 80, 30)
+        button.roundRect(18, 18, w, 80, 30)
         button.fill()
 
         //  shadow dark
-        button.fillStyle = "rgb(229, 230, 230)"
+        button.fillStyle = "rgb(223, 224, 224)"
         button.beginPath()
-        button.roundRect(20, 20, w, 80, 30)
+        button.roundRect(15, 15, w, 80, 30)
         button.fill()
 
         //  highlight dark
@@ -70,31 +70,40 @@ class Button {
         button.fill()
 
         //  highlight mid
-        button.fillStyle = "rgb(239, 240, 240)"
+        button.fillStyle = "rgb(241, 242, 242)"
         button.beginPath()
-        button.roundRect(5, 5, w - 1, 79, 30)
+        button.roundRect(2, 2, w - 1, 79, 30)
         button.fill()
 
         //  highlight light
-        button.fillStyle = "rgb(241, 242, 242)"
+        button.fillStyle = "rgb(246, 247, 247)"
         button.beginPath()
-        button.roundRect(8, 8, w - 2, 78, 30)
+        button.roundRect(5, 5, w - 2, 78, 30)
         button.fill()
 
         //  shadow inner
-        button.fillStyle = "rgb(231, 232, 232)"
+/*         button.fillStyle = "rgb(231, 232, 232)" */
+        button.fillStyle = "rgb(211, 212, 212)"
+
         button.beginPath()
         button.roundRect(10, 10, w - 2, 78, 30)
         button.fill()
 
         //  highlight inner
-        button.fillStyle = "rgb(239, 240, 240)"
+/*         button.fillStyle = "rgb(239, 240, 240)" */
+        button.fillStyle = "rgb(254, 255, 255)"
         button.beginPath()
         button.roundRect(14, 14, w - 2, 78, 30)
         button.fill()
 
         //  center
-        button.fillStyle = "rgb(235, 236, 236)"
+        const gradient = button.createLinearGradient(0, 10, 40, 120)
+        gradient.addColorStop(0, "rgb(210, 210, 215)")
+        gradient.addColorStop(0.7, "rgb(185, 188, 190)")
+        gradient.addColorStop(1, "rgb(222, 223, 223)")
+        button.fillStyle = gradient
+
+        /* button.fillStyle = "rgb(235, 236, 236)" */
         button.beginPath()
         button.roundRect(12, 12, w - 2, 78, 30)
         button.fill()
@@ -105,12 +114,12 @@ class Button {
         button.fillText(this.text, 49, 69)
 
         // text shadow
-        button.fillStyle = "rgb(190, 190, 190)"
+        button.fillStyle = "rgb(185, 185, 190)"
         button.font = "60px helvetica"
-        button.fillText(this.text, 53, 71)
+        button.fillText(this.text, 53, 73)
 
         // text 
-        button.fillStyle = "rgb(225, 225, 225)"
+        button.fillStyle = "rgb(231, 231, 230)"
         button.font = "60px helvetica"
         button.fillText(this.text, 50, 70)
 
