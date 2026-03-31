@@ -97,9 +97,9 @@ class Button {
         button.fill()
 
         //  center
-        const gradient = button.createLinearGradient(0, 10, 40, 120)
-        gradient.addColorStop(0, "rgb(210, 210, 215)")
-        gradient.addColorStop(0.7, "rgb(185, 188, 190)")
+        const gradient = button.createLinearGradient(20, 20, 60, 90)
+        gradient.addColorStop(0, "rgb(185, 188, 190)")
+        /* gradient.addColorStop(0.9, "rgb(210, 210, 215)") */
         gradient.addColorStop(1, "rgb(222, 223, 223)")
         button.fillStyle = gradient
 
@@ -116,7 +116,7 @@ class Button {
         // text shadow
         button.fillStyle = "rgb(185, 185, 190)"
         button.font = "60px helvetica"
-        button.fillText(this.text, 53, 73)
+        button.fillText(this.text, 52, 72)
 
         // text 
         button.fillStyle = "rgb(231, 231, 230)"
