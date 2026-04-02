@@ -117,15 +117,16 @@ class Button {
         button.fill()
 
         //  center
-        const gradient = button.createLinearGradient(20, 20, 60, 90)
+        const gradient = button.createLinearGradient(0, 0, 60, 90)
         gradient.addColorStop(0, "rgb(185, 188, 190)")
         /* gradient.addColorStop(0.9, "rgb(210, 210, 215)") */
-        gradient.addColorStop(1, "rgb(222, 223, 223)")
+        /* gradient.addColorStop(1, "rgb(222, 223, 223)") */
+        gradient.addColorStop(1, "rgb(235, 236, 236)")
         button.fillStyle = gradient
 
         /* button.fillStyle = "rgb(235, 236, 236)" */
         button.beginPath()
-        button.roundRect(12, 12, w - 2, 78, 30)
+        button.roundRect(13, 13, w - 2, 78, 30)
         button.fill()
 
         // text highlight
