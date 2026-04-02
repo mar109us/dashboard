@@ -11,47 +11,42 @@ class Button {
         this.canvas = document.createElement('canvas')
         this.button_canvas = this.canvas.getContext('2d')
 
+        this.canvas.style.zIndex = "10"
         this.canvas.style.left = `${this.x}px`
         this.canvas.style.top = `${this.y}px`
         this.canvas.width = this.w
         this.canvas.height = this.h
 
 
+        this.content = document.createElement('canvas')
+        this.content_canvas = this.content.getContext('2d')
+
+        this.content.style.zIndex = "100"
+        this.content.style.position = "absolute"
+        this.content.style.left = `${25}px`
+        this.content.style.top = `${125}px`
+        this.content.width = g.max_width - 50
+        this.content.height = g.max_height - 150
 
         this.content_visible = false
 
         this.canvas.addEventListener("click", () => {this.content_visible = !this.content_visible}) 
 
-        this.content = document.createElement('canvas')
-        this.content_canvas = this.content.getContext('2d')
+        this.content_set_show = this.content.style.display = "none"
 
-        this.content.style.left = `${200}px`
-        this.content.style.top = `${400}px`
-        this.content.width = 500
-        this.content.height = 500
-
-        this.content_set_show = this.content.style.display = "block"
-
-        this.content_set_hide = this.content.style.display = "none"
+        this.content_set_hide = this.content.style.display = "block"
 
 
 
-        this.canvas.style.zIndex = "10"
-        this.content.style.zIndex = "15"
 
-        document.body.appendChild(this.content)
         document.body.appendChild(this.canvas)
-
+        document.body.appendChild(this.content)
 
         button_array.push(this)
     }
 
 
     render_button() {
-        
-        
-
-
 
         let w = this.w - 30
 
@@ -157,17 +152,13 @@ class Button {
 
         let content_get_hide = this.content_set_hide
 
-        if (button_clicked) {
-            content_is_show()
-        }
+        let content_w = this.content.width
+        let content_h = this.content.height
 
-        else {
-            content_is_hide()
-        }
+
 
         function content_is_show() {
             content_get_show
-            content()
             console.log("show")
         }
 
@@ -176,16 +167,35 @@ class Button {
             console.log("hide")
         }
 
-        function content() {
-            content_canvas.fillStyle = "rgb(17, 24, 24)"
-            content_canvas.roundRect(15, 15, 15, 80, 30)
-            console.log("CONTENT")
+        if (button_clicked) {
+            content_is_show()   
+            /* content_canvas.fillStyle = "rgb(185, 185, 190)" */
+                    const gradient = content_canvas.createLinearGradient(0, 500, 1060, 1090)
+        gradient.addColorStop(0, "rgb(185, 188, 190)")
+        /* gradient.addColorStop(0.9, "rgb(210, 210, 215)") */
+        gradient.addColorStop(1, "rgb(222, 223, 223)")
+        content_canvas.fillStyle = gradient
+
+            content_canvas.beginPath()
+            content_canvas.roundRect(0, 0, content_w, content_h, 75)
+            content_canvas.fill()
+/*             content_canvas.fillRect(0, 0, content_w, content_h) */
+
+/*         button.fillStyle = "rgb(231, 231, 230)"
+        button.font = "60px helvetica"
+        button.fillText("text text text text text text text ", 50, 70) */
         }
+
+        else {
+            content_is_hide()
+        }
+
 
 
         if (typeof this.onRenderContent === 'function') {
             this.onRenderContent (
                 button,
+                content_canvas
             )
         }    
     }
