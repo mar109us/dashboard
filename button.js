@@ -151,12 +151,10 @@ class Button {
 
         if (button_clicked === true) {
             this.content.style.display = "block"
-            console.log("show")
         }
 
         else {
             this.content.style.display = "none"
-            console.log("hide")
         }
 
         const content_gradient = content_canvas.createLinearGradient(0, 500, 1060, 1090)
@@ -166,6 +164,11 @@ class Button {
         content_canvas.beginPath()
         content_canvas.roundRect(0, 0, content_w, content_h, 75)
         content_canvas.fill()
+
+        content_canvas.fillStyle = "rgb(85, 85, 90)"
+        content_canvas.font = "60px helvetica"
+        content_canvas.fillText("2.2 kg pork 56 g salt 7g curing salt 6g black pepper 7g red pepper flakes 8g fennel seeds 10g dextrose 3 cloves of garlic 125ml of wine 10g bactoferm 30ml water to dissolve the bactoferm", 50, 100)
+
 
         if (typeof this.onRenderContent === 'function') {
             this.onRenderContent (

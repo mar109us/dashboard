@@ -1,4 +1,4 @@
-setInterval(check_global_value, g.data_update_interval)
+/* setInterval(check_global_value, g.data_update_interval) */
 
 setInterval(update_window_size, global_fps)
 
