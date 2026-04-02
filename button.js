@@ -1,12 +1,13 @@
 let button_array = []
 
 class Button {
-    constructor(text, x, y, w, h) {
+    constructor(text, x, y, w, h, text_content) {
         this.text = text
         this.x = x
         this.y = y
         this.w = w
         this.h = h
+        this.text_content = text_content
 
         this.canvas = document.createElement('canvas')
         this.button_canvas = this.canvas.getContext('2d')
@@ -26,9 +27,9 @@ class Button {
         this.content.style.display = "none"
         this.content.style.zIndex = "3"
         this.content.style.left = `${25}px`
-        this.content.style.top = `${125}px`
+        this.content.style.top = `${200}px`
         this.content.width = g.max_width - 50
-        this.content.height = g.max_height - 150
+        this.content.height = g.max_height - 225
 
         this.content_visible = false
 
@@ -37,8 +38,20 @@ class Button {
             this.render_button()
         }) 
 
-        document.body.appendChild(this.content)
+        this.content_paragraph = document.createElement("div")
+        this.content_paragraph.innerHTML = this.text_content || ""
+        this.content_paragraph.style.position = "absolute"
+        this.content_paragraph.style.display = "none"
+        this.content_paragraph.style.zIndex = "3"
+        this.content_paragraph.style.left = `${100}px`
+        this.content_paragraph.style.top = `${225}px`
+        this.content_paragraph.width = g.max_width - 50
+        this.content_paragraph.height = g.max_height - 150
+
+
         document.body.appendChild(this.canvas)
+        document.body.appendChild(this.content)
+        document.body.appendChild(this.content_paragraph)
 
         button_array.push(this)
     }
@@ -151,10 +164,12 @@ class Button {
 
         if (button_clicked === true) {
             this.content.style.display = "block"
+            this.content_paragraph.style.display = "block"
         }
 
         else {
             this.content.style.display = "none"
+            this.content_paragraph.style.display = "none"
         }
 
         const content_gradient = content_canvas.createLinearGradient(0, 500, 1060, 1090)
@@ -164,11 +179,6 @@ class Button {
         content_canvas.beginPath()
         content_canvas.roundRect(0, 0, content_w, content_h, 75)
         content_canvas.fill()
-
-        content_canvas.fillStyle = "rgb(85, 85, 90)"
-        content_canvas.font = "60px helvetica"
-        content_canvas.fillText("2.2 kg pork 56 g salt 7g curing salt 6g black pepper 7g red pepper flakes 8g fennel seeds 10g dextrose 3 cloves of garlic 125ml of wine 10g bactoferm 30ml water to dissolve the bactoferm", 50, 100)
-
 
         if (typeof this.onRenderContent === 'function') {
             this.onRenderContent (
