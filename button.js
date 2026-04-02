@@ -16,15 +16,62 @@ class Button {
         this.canvas.width = this.w
         this.canvas.height = this.h
 
+
+
+        this.content_visible = false
+
+        
+
+        this.canvas.addEventListener("click", () => {this.content_visible = !this.content_visible}) 
+
+        this.content = document.createElement('canvas')
+        this.content_canvas = this.content.getContext('2d')
+
+        this.content.style.left = `${100}px`
+        this.content.style.top = `${100}px`
+        this.content.width = 500
+        this.content.height = 500
+
+        this.content_set_show = this.content.style.display = "block"
+
+        this.content_set_hide = this.content.style.display = "none"
+
+
+
         this.canvas.style.zIndex = "10"
+        this.content.style.zIndex = "15"
 
         document.body.appendChild(this.canvas)
+        document.body.appendChild(this.content)
 
         button_array.push(this)
     }
 
     render_button() {
 
+        let button_clicked = this.content_visible
+
+        let content_get_show = this.content_set_show
+
+        let content_get_hide = this.content_set_hide
+
+        function content_is_show() {
+            content_get_show
+            console.log("show")
+        }
+
+        function content_is_hide() {
+            content_get_hide
+            console.log("hide")
+        }
+        
+        if (button_clicked) {
+            content_is_show()
+        }
+
+        else {
+            content_is_hide()
+        }
 
 
         let w = this.w - 30
