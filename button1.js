@@ -9,7 +9,7 @@ const code_button = new Button("code", 0, 0, 230, 120,
         sgrgsgsfgsgsrdsrgsrg<br>
         dsgkkjsdlkgjslkdgj<br>
         sgkjsflgkjsflgkj<br>
-        skjslkshjsrlhkj<br>
+        skjslkshjdsrlhkj<br>
         sgrgsgsfgsgsrdsrgsrg<br>
         dsgkkjsdlkgjslkdgj<br>
         sgkjsflgkjsflgkj<br>
