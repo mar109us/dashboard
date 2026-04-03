@@ -157,14 +157,19 @@ class Button {
         button.font = "60px helvetica"
         button.fillText(this.text, 50, 70)
 
-        let content_canvas = this.content_canvas
-        let button_clicked = this.content_visible
-        let content_w = this.content.width
-        let content_h = this.content.height
-
-        if (button_clicked === true) {
+        if (this.content_visible) {
             this.content.style.display = "block"
             this.content_paragraph.style.display = "block"
+
+        button_array.forEach(instance => {
+
+            if (instance !== this) {
+                instance.content.style.display = "none"
+                instance.content_paragraph.style.display = "none"
+                instance.content_visible = false
+            }
+        })
+
         }
 
         else {
@@ -172,18 +177,19 @@ class Button {
             this.content_paragraph.style.display = "none"
         }
 
-        const content_gradient = content_canvas.createLinearGradient(0, 500, 1060, 1090)
+
+
+        const content_gradient = this.content_canvas.createLinearGradient(0, 500, 1060, 1090)
         content_gradient.addColorStop(0, "rgb(185, 188, 190)")
         content_gradient.addColorStop(1, "rgb(222, 223, 223)")
-        content_canvas.fillStyle = content_gradient
-        content_canvas.beginPath()
-        content_canvas.roundRect(0, 0, content_w, content_h, 75)
-        content_canvas.fill()
+        this.content_canvas.fillStyle = content_gradient
+        this.content_canvas.beginPath()
+        this.content_canvas.roundRect(0, 0, this.content.width, this.content.height, 75)
+        this.content_canvas.fill()
 
         if (typeof this.onRenderContent === 'function') {
             this.onRenderContent (
                 button,
-                content_canvas
             )
         }    
     }

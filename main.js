@@ -1,7 +1,7 @@
 function main_loop() {
 
-    button_array.forEach(Button => {
-        Button.render_button()
+    button_array.forEach(instance => {
+        instance.render_button()
     })
 
 }

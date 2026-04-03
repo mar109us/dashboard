@@ -35,63 +35,6 @@ const code_button = new Button("code", 0, 0, 230, 120,
         skjslkshjsrlhkj
     </div>
 
-    <div>
-        sgrgsgsfgsgsrdsrgsrg<br>
-        dsgkkjsdlkgjslkdgj<br>
-        sgkjsflgkjsflgkj<br>
-        skjslkshjsrlhkj<br>
-        sgrgsgsfgsgsrdsrgsrg<br>
-        dsgkkjsdlkgjslkdgj<br>
-        sgkjsflgkjsflgkj<br>
-        skjslkshjsrlhkj<br>
-        sgrgsgsfgsgsrdsrgsrg<br>
-        dsgkkjsdlkgjslkdgj<br>
-        sgkjsflgkjsflgkj<br>
-        skjslkshjsrlhkj<br>
-        sgrgsgsfgsgsrdsrgsrg<br>
-        dsgkkjsdlkgjslkdgj<br>
-        sgkjsflgkjsflgkj<br>
-        skjslkshjsrlhkj
-    </div>
-
-    <div>
-        sgrgsgsfgsgsrdsrgsrg<br>
-        dsgkkjsdlkgjslkdgj<br>
-        sgkjsflgkjsflgkj<br>
-        skjslkshjsrlhkj<br>
-        sgrgsgsfgsgsrdsrgsrg<br>
-        dsgkkjsdlkgjslkdgj<br>
-        sgkjsflgkjsflgkj<br>
-        skjslkshjsrlhkj<br>
-        sgrgsgsfgsgsrdsrgsrg<br>
-        dsgkkjsdlkgjslkdgj<br>
-        sgkjsflgkjsflgkj<br>
-        skjslkshjsrlhkj<br>
-        sgrgsgsfgsgsrdsrgsrg<br>
-        dsgkkjsdlkgjslkdgj<br>
-        sgkjsflgkjsflgkj<br>
-        skjslkshjsrlhkj
-    </div>
-
-    <div>
-        sgrgsgsfgsgsrdsrgsrg<br>
-        dsgkkjsdlkgjslkdgj<br>
-        sgkjsflgkjsflgkj<br>
-        skjslkshjsrlhkj<br>
-        sgrgsgsfgsgsrdsrgsrg<br>
-        dsgkkjsdlkgjslkdgj<br>
-        sgkjsflgkjsflgkj<br>
-        skjslkshjsrlhkj<br>
-        sgrgsgsfgsgsrdsrgsrg<br>
-        dsgkkjsdlkgjslkdgj<br>
-        sgkjsflgkjsflgkj<br>
-        skjslkshjsrlhkj<br>
-        sgrgsgsfgsgsrdsrgsrg<br>
-        dsgkkjsdlkgjslkdgj<br>
-        sgkjsflgkjsflgkj<br>
-        skjslkshjsrlhkj
-    </div>
-
 </div>`)
 
 code_button.onRenderContent = code
@@ -99,6 +42,7 @@ code_button.onRenderContent = code
 function code() {
 
 }
+
 
 
 const button_2_init = new Button("tools", 0, 0, 230, 120)
