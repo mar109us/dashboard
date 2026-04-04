@@ -179,9 +179,9 @@ class Button {
 
 
 
-        const content_gradient = this.content_canvas.createLinearGradient(0, 500, 1060, 1090)
-        content_gradient.addColorStop(0, "rgb(185, 188, 190)")
-        content_gradient.addColorStop(1, "rgb(222, 223, 223)")
+        const content_gradient = this.content_canvas.createLinearGradient(0, 0, 500, 1000)
+        content_gradient.addColorStop(0, "rgb(84, 103, 117)")
+        content_gradient.addColorStop(1, "rgb(32, 36, 43)")
         this.content_canvas.fillStyle = content_gradient
         this.content_canvas.beginPath()
         this.content_canvas.roundRect(0, 0, this.content.width, this.content.height, 75)
