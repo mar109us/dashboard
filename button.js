@@ -19,7 +19,6 @@ class Button {
         this.canvas.width = this.w
         this.canvas.height = this.h
 
-
         this.content = document.createElement('canvas')
         this.content_canvas = this.content.getContext('2d')
 
@@ -58,25 +57,9 @@ class Button {
 
     render_button() {
 
-
-
         let w = this.w - 30
 
         let button = this.button_canvas
-
-        let array_position = button_array.indexOf(this) + 1
-
-        if (array_position > max_elements_x && array_position <= max_elements_x * 2) {
-            this.canvas.style.left = `${g.grid_x * (array_position - max_elements_x)}px`
-        }
-
-        if (array_position > max_elements_x * 2 && array_position <= max_elements_x * 3) {
-            this.canvas.style.left = `${g.grid_x * (array_position - max_elements_x * 2)}px`
-        }
-
-        if (array_position > max_elements_x * 3 && array_position <= max_elements_x * 4) {
-            this.canvas.style.left = `${g.grid_x * (array_position - max_elements_x * 3)}px`
-        }
 
         //  shadow light
         button.fillStyle = "rgb(233, 234, 234)"
@@ -115,15 +98,12 @@ class Button {
         button.fill()
 
         //  shadow inner
-/*         button.fillStyle = "rgb(231, 232, 232)" */
         button.fillStyle = "rgb(211, 212, 212)"
-
         button.beginPath()
         button.roundRect(10, 10, w - 2, 78, 30)
         button.fill()
 
         //  highlight inner
-/*         button.fillStyle = "rgb(239, 240, 240)" */
         button.fillStyle = "rgb(254, 255, 255)"
         button.beginPath()
         button.roundRect(14, 14, w - 2, 78, 30)
@@ -132,12 +112,8 @@ class Button {
         //  center
         const gradient = button.createLinearGradient(0, 0, 60, 90)
         gradient.addColorStop(0, "rgb(185, 188, 190)")
-        /* gradient.addColorStop(0.9, "rgb(210, 210, 215)") */
-        /* gradient.addColorStop(1, "rgb(222, 223, 223)") */
         gradient.addColorStop(1, "rgb(235, 236, 236)")
         button.fillStyle = gradient
-
-        /* button.fillStyle = "rgb(235, 236, 236)" */
         button.beginPath()
         button.roundRect(13, 13, w - 2, 78, 30)
         button.fill()

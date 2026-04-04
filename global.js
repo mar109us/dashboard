@@ -1,4 +1,4 @@
-const max_elements_x = 3
+const max_elements_x = 2
 const margin_left = 50
 
 window.g = {
